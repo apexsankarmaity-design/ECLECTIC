@@ -18,8 +18,12 @@
   <div class="ec-bg active"
        style="background-image:url('https://www.eclecticcontract.com/wp-content/uploads/2017/11/Slide-6A.jpg')"></div>
 
-  <div class="ec-bg"
-       style="background-image:url('https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=2200&q=85')"></div>
+  <!-- <div class="ec-bg"
+       style="background-image:url('https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=2200&q=85')"></div> -->
+       <div class="ec-bg"
+     style="background-image: url('images/Eclectic-Shibuya-02.webp');">
+</div>
+      
 
   <div class="ec-bg"
        style="background-image:url('https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=2200&q=85')"></div>
@@ -748,108 +752,117 @@
 
 
 
+
 <footer class="ec-main-footer">
 
   <div class="ec-footer-top">
     <div class="ec-footer-grid">
 
-      <!-- Company Introduction -->
+      <!-- Company Information -->
       <div class="ec-footer-about">
-        <a href="https://www.eclecticcontract.com/" class="ec-footer-logo">
-          ECLECTIC<span>®</span>
+
+        <a href="https://www.eclecticcontract.com/"
+           class="ec-footer-logo">
+         <img src="images/logo.webp"
+         alt="ECLECTIC®">
         </a>
+
+        <h3 class="ec-footer-company-name">
+          ECLECTIC®
+        </h3>
 
         <p class="ec-footer-tagline">
           Furniture for spaces that inspire.
         </p>
 
         <p class="ec-footer-description">
-          We create contemporary contract furniture that brings together
-          thoughtful design, lasting quality, and everyday functionality
-          for hospitality, dining, and commercial spaces.
+          Eclectic® Contract Furniture Industries Inc. and Design®
+          creates contemporary furniture for hospitality, dining,
+          and commercial spaces.
         </p>
 
-        <div class="ec-footer-socials">
-          <a href="https://www.instagram.com/" target="_blank"
-             rel="noopener noreferrer" aria-label="Instagram">IG</a>
-          <a href="https://www.linkedin.com/" target="_blank"
-             rel="noopener noreferrer" aria-label="LinkedIn">in</a>
-          <a href="https://www.facebook.com/" target="_blank"
-             rel="noopener noreferrer" aria-label="Facebook">f</a>
-        </div>
       </div>
 
-      <!-- Quick Links -->
+
+      <!-- Explore Links -->
       <div class="ec-footer-column">
+
         <h3>EXPLORE</h3>
+
         <ul>
           <li><a href="https://www.eclecticcontract.com/">Home</a></li>
           <li><a href="https://www.eclecticcontract.com/collection/">Collections</a></li>
           <li><a href="https://www.eclecticcontract.com/">About Eclectic</a></li>
           <li><a href="https://www.eclecticcontract.com/">Our Process</a></li>
         </ul>
+
       </div>
+
 
       <!-- Collections -->
       <div class="ec-footer-column">
+
         <h3>OUR COLLECTIONS</h3>
+
         <ul>
           <li><a href="https://www.eclecticcontract.com/collection/sinu-collection/">Sinu</a></li>
           <li><a href="https://www.eclecticcontract.com/collection/leaves_barstool/">Leaves Barstool</a></li>
           <li><a href="https://www.eclecticcontract.com/collection/legarm-collection/">LegArm</a></li>
           <li><a href="https://www.eclecticcontract.com/collection/shibuya-crossings/">Shibuya Crossings</a></li>
         </ul>
+
       </div>
 
-      <!-- Contact -->
+
+      <!-- Contact Information -->
       <div class="ec-footer-column ec-footer-contact">
-        <h3>LET'S CONNECT</h3>
-        <p>
-          Have a project in mind? Let's create something exceptional together.
+
+        <h3>CONTACT</h3>
+
+        <p class="ec-footer-address">
+          450 Fashion Avenue<br>
+          Suite #2710<br>
+          New York, NY 10123
         </p>
 
+       <div class="ec-footer-contact-details"> 
+        <p> <span>Phone:</span> <a href="tel:+12129675504">(212) 967-5504</a> </p>
+        <p> <span>Cell:</span> <a href="tel:+19178336362">(917) 833-6362</a> </p> 
+        <p> <span>Email:</span> <a href="mailto:info@eclecticcontract.com"> info@eclecticcontract.com </a> </p>
+        <p> <span>Direct:</span> <a href="mailto:alex@eclecticcontract.com"> alex@eclecticcontract.com </a> </p>
+         </div>
         <a class="ec-footer-contact-link"
            href="https://www.eclecticcontract.com/contact/">
-          Discuss Your Project
-          <span>↗</span>
+          Discuss Your Project <span>↗</span>
         </a>
 
-        <a class="ec-footer-email"
-           href="mailto:YOUR-EMAIL@example.com">
-          YOUR-EMAIL@example.com
-        </a>
       </div>
 
     </div>
   </div>
 
-  <!-- Bottom Bar -->
+
+  <!-- Footer Bottom -->
   <div class="ec-footer-bottom">
+
     <p>
-      © <span id="ec-footer-year">2026</span> ECLECTIC®. All rights reserved.
+      © <span id="ec-footer-year">2026</span>
+      ECLECTIC® Contract Furniture Industries Inc. All rights reserved.
     </p>
 
-    <div class="ec-footer-bottom-links">
-      <a href="https://www.eclecticcontract.com/privacy-policy/">Privacy Policy</a>
-      <a href="https://www.eclecticcontract.com/terms-and-conditions/">Terms & Conditions</a>
-    </div>
-
-    <a href="#" class="ec-back-to-top"
-       onclick="window.scrollTo({top: 0, behavior: 'smooth'}); return false;">
-      BACK TO TOP ↑
+    <a href="https://www.eclecticcontract.com/">
+      Designed for exceptional spaces.
     </a>
+
   </div>
 
 </footer>
 
 <script>
-(function () {
-  var yearElement = document.getElementById('ec-footer-year');
-  if (yearElement) {
-    yearElement.textContent = new Date().getFullYear();
-  }
-})();
+document.getElementById("ec-footer-year").textContent =
+  new Date().getFullYear();
 </script>
+
 
 
 
