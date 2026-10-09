@@ -89,25 +89,19 @@ body {
 
 /* Dark overlay for clear text */
 
-/* .ec-bg::after {
+.ec-bg::after {
     content: "";
     position: absolute;
     inset: 0;
-    background:
-        linear-gradient(
-            90deg,
-            rgba(0, 0, 0, 0.65) 0%,
-            rgba(0, 0, 0, 0.40) 50%,
-            rgba(0, 0, 0, 0.55) 100%
-        ),
-        linear-gradient(
-            180deg,
-            rgba(0, 0, 0, 0.38) 0%,
-            rgba(0, 0, 0, 0.10) 40%,
-            rgba(0, 0, 0, 0.45) 100%
-        );
+    background: linear-gradient( 90deg, rgba(0, 0, 0, 0.42) 0%,
+     rgba(0, 0, 0, 0.18) 40%,
+      rgba(0, 0, 0, 0.02) 75%,
+       rgba(0, 0, 0, 0.08) 100% ), 
+    linear-gradient( 180deg, rgba(0, 0, 0, 0.08) 0%,
+     rgba(0, 0, 0, 0.00) 45%,
+      rgba(0, 0, 0, 0.20) 100% );
     pointer-events: none;
-} */
+}
 
 /* ==================================================
    HEADER / NAVBAR
