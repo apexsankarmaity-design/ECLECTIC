@@ -89,7 +89,7 @@ body {
 
 /* Dark overlay for clear text */
 
-.ec-bg::after {
+/* .ec-bg::after {
     content: "";
     position: absolute;
     inset: 0;
@@ -107,7 +107,7 @@ body {
             rgba(0, 0, 0, 0.45) 100%
         );
     pointer-events: none;
-}
+} */
 
 /* ==================================================
    HEADER / NAVBAR
