@@ -962,14 +962,20 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
+
 <script>
 document.addEventListener("DOMContentLoaded", function () {
+
     document.querySelectorAll(".ec-collections").forEach(function (section) {
+
         const track = section.querySelector("#ecCollectionsTrack");
         const prev = section.querySelector(".ec-collection-prev");
         const next = section.querySelector(".ec-collection-next");
 
-        if (!track || !prev || !next) return;
+        if (!track) return;
+
+        let autoSlide;
+        let resumeTimer;
 
         function getDistance() {
             const item = track.querySelector(".ec-collection-item");
@@ -981,21 +987,32 @@ document.addEventListener("DOMContentLoaded", function () {
             return item.getBoundingClientRect().width + gap;
         }
 
-        next.addEventListener("click", function () {
-            const maxScroll = track.scrollWidth - track.clientWidth;
+        function getMaxScroll() {
+            return Math.max(0, track.scrollWidth - track.clientWidth);
+        }
+
+        function slideNext() {
+            const maxScroll = getMaxScroll();
+
+            if (maxScroll <= 5) return;
 
             if (track.scrollLeft >= maxScroll - 5) {
-                track.scrollTo({ left: 0, behavior: "smooth" });
+                track.scrollTo({
+                    left: 0,
+                    behavior: "smooth"
+                });
             } else {
                 track.scrollBy({
                     left: getDistance(),
                     behavior: "smooth"
                 });
             }
-        });
+        }
 
-        prev.addEventListener("click", function () {
-            const maxScroll = track.scrollWidth - track.clientWidth;
+        function slidePrev() {
+            const maxScroll = getMaxScroll();
+
+            if (maxScroll <= 5) return;
 
             if (track.scrollLeft <= 5) {
                 track.scrollTo({
@@ -1008,10 +1025,68 @@ document.addEventListener("DOMContentLoaded", function () {
                     behavior: "smooth"
                 });
             }
+        }
+
+        function stopAutoSlide() {
+            clearInterval(autoSlide);
+        }
+
+        function startAutoSlide() {
+            stopAutoSlide();
+
+            autoSlide = setInterval(function () {
+                slideNext();
+            }, 3000);
+        }
+
+        function pauseThenResume() {
+            stopAutoSlide();
+            clearTimeout(resumeTimer);
+
+            resumeTimer = setTimeout(function () {
+                startAutoSlide();
+            }, 5000);
+        }
+
+        if (next) {
+            next.addEventListener("click", function () {
+                slideNext();
+                pauseThenResume();
+            });
+        }
+
+        if (prev) {
+            prev.addEventListener("click", function () {
+                slidePrev();
+                pauseThenResume();
+            });
+        }
+
+        /* Pause while the visitor interacts with the slider */
+        section.addEventListener("mouseenter", stopAutoSlide);
+
+        section.addEventListener("mouseleave", function () {
+            startAutoSlide();
         });
+
+        section.addEventListener("touchstart", stopAutoSlide, {
+            passive: true
+        });
+
+        section.addEventListener("touchend", function () {
+            pauseThenResume();
+        }, {
+            passive: true
+        });
+
+        /* Start automatic sliding */
+        startAutoSlide();
+
     });
+
 });
 </script>
+
 
 
 

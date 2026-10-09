@@ -250,17 +250,38 @@ body {
     gap: 17px;
 }
 
+
 .ec-socials a {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 30px;
-    height: 35px;
-    color: var(--ec-white);
-    transition:
-        color 0.3s ease,
-        transform 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 35px;
+  height: 35px;
+
+  color: #ffffff !important;
+  background: #EF1B28;
+  border: 1px solid #EF1B28;
+  border-radius: 50%;
+
+  box-shadow: 0 4px 12px rgba(239, 27, 40, 0.35);
+  transition: background 0.3s ease,
+              color 0.3s ease,
+              transform 0.3s ease,
+              box-shadow 0.3s ease;
 }
+
+/* Slightly darker effect on hover */
+.ec-socials a:hover {
+  background: #171715;
+  border-color: #171715;
+  color: #ffffff !important;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(239, 27, 40, 0.4);
+}
+
+
+
+
 
 .ec-socials svg {
     display: block;
@@ -273,11 +294,7 @@ body {
     stroke-linejoin: round;
 }
 
-.ec-socials a:hover,
-.ec-socials a:focus-visible {
-    color: var(--ec-red);
-    transform: translateY(-3px);
-}
+
 
 .ec-socials a:focus-visible {
     outline: 2px solid var(--ec-red);
@@ -1453,6 +1470,15 @@ body {
     overflow: hidden;
     border-radius: 50%;
     background: #292925;
+    border: 2px solid #EF1B28;
+    box-shadow: 0 5px 20px rgba(239, 27, 40, 0.20);
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+/* Red glow on hover */
+.ec-collections .ec-collection-item:hover .ec-collection-circle {
+  box-shadow: 0 8px 28px rgba(239, 27, 40, 0.40);
+  transform: translateY(-4px);
 }
 
 .ec-collections .ec-collection-circle img {
@@ -1680,25 +1706,43 @@ body {
     padding: 0 !important;
 }
 
+
+
+
 .ec-custom-work .ec-custom-contact {
-    display: inline-block !important;
-    flex-shrink: 0;
-    color: #ffffff !important;
-    background: transparent !important;
-    border: 0 !important;
-    border-bottom: 1px solid var(--ec-red) !important;
-    border-radius: 0 !important;
-    padding: 0 0 12px !important;
-    margin: 0 0 5px !important;
-    font-size: 13px !important;
-    line-height: 1.5;
-    text-decoration: none !important;
-    box-shadow: none !important;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 12px;
+  padding: 13px 24px;
+
+  background: #EF1B28;
+  border: 1px solid #EF1B28 !important;
+  border-radius: 3px;
+
+  color: #ffffff !important;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-decoration: none !important;
+
+  box-shadow: 0 5px 14px rgba(239, 27, 40, 0.20);
+  transition: all 0.3s ease;
 }
 
+/* Hover effect */
 .ec-custom-work .ec-custom-contact:hover {
-    color: var(--ec-red) !important;
+  background: #171715;
+  border-color: #171715 !important;
+  color: #ffffff !important;
+  box-shadow: 0 8px 20px rgba(239, 27, 40, 0.30);
+  transform: translateY(-3px);
 }
+
+
+
+
 
 /* CATEGORY TABS */
 
@@ -2216,6 +2260,19 @@ body {
   min-width: 0;
   overflow: hidden;
   background: #f5f5f5;
+  /* 3D effect with brand-red shadow */ 
+  /* border: 1px solid rgba(239, 27, 40, 0.35); */
+   border-radius: 8px; 
+   box-shadow: 0 5px 0 rgba(239, 27, 40, 0.12),
+    0 12px 25px rgba(239, 27, 40, 0.20), 
+    0 22px 40px rgba(0, 0, 0, 0.10);
+     transform: perspective(1000px) translateY(0);
+      transition: transform 0.35s ease, box-shadow 0.35s ease; } 
+      /* Enhanced 3D effect on hover */ 
+      .ec-showcase-image:hover { transform: perspective(1000px) translateY(-6px) rotateX(2deg); 
+        box-shadow: 0 7px 0 rgba(239, 27, 40, 0.18),
+         0 18px 32px rgba(239, 27, 40, 0.30),
+          0 28px 45px rgba(0, 0, 0, 0.14);
 }
 
 .ec-showcase-image img {
@@ -2226,6 +2283,7 @@ body {
   aspect-ratio: 1.35 / 1;
   object-fit: contain;
   transition: transform 0.5s ease;
+  padding:20px;
 }
 
 .ec-showcase-image:hover img {
@@ -2281,32 +2339,39 @@ body {
 
 /* Collection links */
 .ec-explore-link {
-  display: inline-flex;
-  align-items: center;
+  display: inline-flex; align-items: center; 
+  justify-content: center;
   gap: 12px;
   margin-top: 12px;
-  padding-bottom: 8px;
-  border-bottom: 1px solid var(--ec-red);
-  color: var(--ec-black) !important;
-  font-size: 13px;
-  font-weight: 600;
-  text-decoration: none !important;
-  transition: color 0.25s ease;
+  padding: 13px 24px;
+  background: #EF1B28; 
+  border: 1px solid #EF1B28; 
+  border-radius: 3px; 
+  color: #ffffff !important; 
+  font-size: 13px; 
+  font-weight: 600; 
+  letter-spacing: 0.5px; 
+  text-decoration: none !important; 
+  box-shadow: 0 5px 14px rgba(239, 27, 40, 0.20); 
+  transition: all 0.3s ease;
 }
 
 .ec-explore-link span {
-  color: var(--ec-red);
-  font-size: 20px;
-  line-height: 1;
-  transition: transform 0.25s ease;
+  display: inline-block; 
+  transition: transform 0.3s ease;
 }
 
 .ec-explore-link:hover {
-  color: var(--ec-red) !important;
+  background: #171715; 
+  border-color: #171715; 
+  color: #ffffff !important; 
+  box-shadow: 0 8px 20px rgba(239, 27, 40, 0.30); 
+  transform: translateY(-3px);
+
 }
 
 .ec-explore-link:hover span {
-  transform: translate(3px, -3px);
+  transform: translateX(4px);
 }
 
 /* LegArm: reverse image and content */
